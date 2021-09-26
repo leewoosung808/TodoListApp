@@ -32,7 +32,6 @@ public class TodoList {
 
 	public void sortByName() {
 		Collections.sort(list, new TodoSortByName());
-
 	}
 
 	public void listAll() {

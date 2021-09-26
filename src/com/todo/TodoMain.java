@@ -14,8 +14,12 @@ public class TodoMain {
 		TodoList l = new TodoList();
 		boolean isList = false;
 		boolean quit = false;
+		
+		TodoUtil.loadList(l, "todolist.txt");
+		Menu.displaymenu();
+
 		do {
-			Menu.displaymenu();
+			Menu.prompt();
 			isList = false;
 			String choice = sc.next();
 			switch (choice) {
@@ -46,7 +50,7 @@ public class TodoMain {
 				l.reverseList();
 				isList = true;
 				break;
-				
+	
 			case "ls_date":
 				l.sortByDate();
 				isList = true;
@@ -55,13 +59,16 @@ public class TodoMain {
 			case "exit":
 				quit = true;
 				break;
-
+			case "help":
+				Menu.displaymenu();
+				break;
 			default:
-				System.out.println("please enter one of the above mentioned command");
+				System.out.println("올바른 명령어를 입력해주세요 (도움말 -help)");
 				break;
 			}
 			
 			if(isList) l.listAll();
 		} while (!quit);
+		TodoUtil.saveList(l, "todolist.txt");
 	}
 }
