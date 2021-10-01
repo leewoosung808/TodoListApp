@@ -11,7 +11,7 @@ public class Menu {
         System.out.println("5. 제목순으로 정렬 ( ls_name_asc )");
         System.out.println("6. 제목역순으로 정렬( ls_name_desc )");
         System.out.println("7. 날짜순으로 정렬 ( ls_date )");
-        System.out.println("8. 종료 (Or press escape key to exit)");
+        System.out.println("8. 종료 ( exit )");
     }
     public static void prompt() {
     	System.out.println("Command > ");

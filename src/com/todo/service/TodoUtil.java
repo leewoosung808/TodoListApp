@@ -121,6 +121,7 @@ public class TodoUtil {
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			
 			String oneline;
+			int count=0;
 			while((oneline = br.readLine()) != null) {
 				StringTokenizer a = new StringTokenizer(oneline, "##");
 				String title = a.nextToken();
@@ -128,9 +129,10 @@ public class TodoUtil {
 				String current_date=a.nextToken();
 				TodoItem t = new TodoItem(title, desc, current_date);
 				l.addItem(t);
+				count++;
 			}
 			br.close();
-			System.out.println("데이터를 불러왔습니다.");
+			System.out.println(count+"개의 항목을 읽었습니다");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
