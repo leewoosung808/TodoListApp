@@ -26,6 +26,8 @@ public class TodoList {
 		list.add(updated);
 	}
 
+	// 
+
 	public ArrayList<TodoItem> getList() {
 		return new ArrayList<TodoItem>(list);
 	}

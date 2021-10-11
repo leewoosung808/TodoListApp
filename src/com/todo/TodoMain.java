@@ -59,12 +59,15 @@ public class TodoMain {
 			case "exit":
 				quit = true;
 				break;
+				
 			case "help":
 				Menu.displaymenu();
 				break;
+				
 			default:
 				System.out.println("올바른 명령어를 입력해주세요 (도움말 -help)");
 				break;
+				
 			}
 			
 			if(isList) l.listAll();

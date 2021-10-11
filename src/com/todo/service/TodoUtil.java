@@ -40,12 +40,12 @@ public class TodoUtil {
 	public static void deleteItem(TodoList l) {
 		
 		Scanner sc = new Scanner(System.in);
-		String title = sc.next();
 
 		System.out.println("\n"
 				+ "========== 항목 삭제\n"
 				+ "삭제할 항목의 제목을 입력해주세요\n"
 				+ "\n");
+		String title = sc.next();
 
 		for (TodoItem item : l.getList()) {
 			if (title.equals(item.getTitle())) {
@@ -93,9 +93,10 @@ public class TodoUtil {
 
 	public static void listAll(TodoList l) {
 		for (TodoItem item : l.getList()) {
-			System.out.println("Item Title: " + item.getTitle() + "  Item Description:  " + item.getDesc());
+			System.out.println("Item Title: " + item.getTitle() + "  Item Description:  " + item.getDesc() +" - " + item.getCurrent_date());
 		}
 	}
+	
 	public static void saveList(TodoList l, String filename) {
 		try {
 			

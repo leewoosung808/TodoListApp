@@ -12,15 +12,16 @@ public class TodoItem {
     public TodoItem(String title, String desc){
         this.title=title;
         this.desc=desc;
-        SimpleDateFormat a=new SimpleDateFormat("yyyy/mm/dd/ kk:mm:ss");
+        SimpleDateFormat a=new SimpleDateFormat("yyyy/MM/dd/ kk:mm:ss");
         this.current_date=a.format(new Date());
     }
+    //이거 두개가 필요한가?? 확인해보기
     public TodoItem(String title, String desc, String current_date){
         this.title=title;
         this.desc=desc;
         this.current_date=current_date;
     }
-    
+   
     public String getTitle() {
         return title;
     }
@@ -44,6 +45,7 @@ public class TodoItem {
     public void setCurrent_date(String current_date) {
         this.current_date = current_date;
     }
+    
     public String toSaveString() {
     	return title + "##" + desc + "##" + current_date + "\n";
     }
